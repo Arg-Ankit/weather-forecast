@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <link rel="stylesheet" type="text/css" href="../style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"
+    />
+
+    <title>React App</title>
+    <style>
+      body {
+        z-index: 1;
+        background-image: url(http://static.tumblr.com/25bac3efec28a6f14a446f7c5f46b685/hywphoq/ufoniwv6n/tumblr_static_ldhkrazuoqo4g0s0sk8s4s4s.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      td,
+      th {
+        vertical-align: middle !important;
+        text-align: center !important;
+      }
+
+      .input-group {
+        margin: 20px 0px;
+        width: 100%;
+      }
+
+      .charts {
+        background-color: whitesmoke;
+        border: 1px solid darkcyan;
+        border-radius: 10px;
+      }
+
+      svg {
+        height: 150px;
+      }
+
+      thead {
+        background-color: darkslategray;
+        color: white;
+      }
+
+      tbody {
+        background-color: lavender;
+      }
+
+      td:first-of-type,
+      td:first-of-type > div {
+        height: 200px;
+        width: 250px;
+      }
+
+      /*
+      Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
+      */
+      @media only screen and (max-width: 1056px),
+        (min-device-width: 768px) and (max-device-width: 1024px) {
+        /* Force table to not be like tables anymore */
+        table,
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+          display: block;
+          text-align: center !important;
+        }
+
+        /* Hide table headers (but not display: none;, for accessibility) */
+        thead tr {
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
+        }
+
+        tr {
+          margin: 0 0 1rem 0;
+        }
+
+        tr:nth-child(odd) {
+          background: #ccc;
+        }
+        table td {
+          padding: 0px !important;
+          line-height: 1.5;
+          vertical-align: top;
+          border-top: 1px solid #eceeef;
+        }
+        td {
+          /* Behave  like a "row" */
+          border: none;
+          border-bottom: 1px solid #eee;
+          position: relative;
+          padding-left: 50%;
+        }
+
+        td:before {
+          /* Now like a table header */
+          position: absolute;
+          /* Top/left values mimic padding */
+          top: 0;
+          left: 6px;
+          width: 45%;
+          padding-right: 10px;
+          white-space: nowrap;
+        }
+        td:first-of-type,
+        td:first-of-type > div {
+          height: 200px !important;
+          width: 100% !important;
+        }
+        /*
+          Label the data
+      You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
+          */
+        td:nth-of-type(1):before {
+          content: "Google Map";
+          font-size: larger;
+          padding: 60px;
+        }
+        td:nth-of-type(2):before {
+          content: "Temperature";
+          font-size: larger;
+          padding: 60px;
+        }
+        td:nth-of-type(3):before {
+          content: "Humidity";
+          font-size: larger;
+          padding: 60px;
+        }
+        td:nth-of-type(4):before {
+          content: "Pressure";
+          font-size: larger;
+          padding: 60px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="container-fluid"></div>
+    <div id="modal"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXiiSOA8pEw8De2En_NjaiUA_CMWCuRZ0"></script>
+  </body>
+</html>
